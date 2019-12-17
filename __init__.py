@@ -16,9 +16,6 @@ def get_consistency_index(A_subset: list, B_subset: list, n: int):
 
     consistency_index = ((r * n) - (k * k)) / (k * (n - k))
 
-    if consistency_index < -1:
-        consistency_index = -1
-
     return consistency_index
 
 
@@ -55,19 +52,3 @@ def get_kuncheva_index(subsets: list, n=None, threshold=None):
     kuncheva_index = ((2) / (k * (k-1))) * pairwise_ci
 
     return kuncheva_index
-
-
-"""
-testing:
-
-if __name__ == "__main__":
-    
-    s0 = [9,7,2]
-    s1 = [9,7,2]
-    s2 = [3,7,9]
-    s3 = [9,1,10]
-    s4 = [8,2,1]
-    s5 = [5,10,3]
-
-    print(get_kuncheva_index([s0,s1], n=10))
-"""
